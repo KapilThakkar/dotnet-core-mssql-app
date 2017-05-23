@@ -218,24 +218,6 @@
                   "limits": {
                     "memory": "${MEMORY_LIMIT}"
                   }
-                },
-                "livenessProbe": {
-                  "httpGet": {
-                    "path": "/",
-                    "port": 8080,
-                    "scheme": "HTTP"
-                  },
-                  "initialDelaySeconds": 40,
-                  "timeoutSeconds": 10
-                },
-                "readinessProbe": {
-                  "httpGet": {
-                    "path": "/",
-                    "port": 8080,
-                    "scheme": "HTTP"
-                  },
-                  "initialDelaySeconds": 10,
-                  "timeoutSeconds": 30
                 }
               }
             ]
@@ -329,13 +311,6 @@
                     "containerPort": 1433
                   }
                 ],
-                "livenessProbe": {
-                  "timeoutSeconds": 1,
-                  "initialDelaySeconds": 30,
-                  "tcpSocket": {
-                    "port": 1433
-                  }
-                },
                 "volumeMounts": [
                   {
                     "name": "${DATABASE_SERVICE_NAME}-data",
